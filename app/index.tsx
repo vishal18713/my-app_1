@@ -1,15 +1,40 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View,Image } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import ImageViewer from "@/components/imageViewer";
+import Button from "@/components/Button";
 
+ 
 export default function Index() {
   return (
     <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      style={styles.container}
     >
-      <Text>Edit app/index.tsx to edit </Text>
+      <View style = {styles.imageContainer}>
+        <ImageViewer/>
+      </View>
+      <View>
+        <Button lable = "Choose a photo"/>
+        <Button lable = "Press me"/>
+
+      </View>
+      <StatusBar style="auto" />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "green",
+  },
+  imageContainer:{
+    flex: 1,
+    padding:50,
+  },
+  footerContainer:{
+    flex:1/3,
+    alignItems:'center',
+  }
+});
