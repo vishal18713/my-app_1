@@ -2,10 +2,23 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import ImageViewer from "@/components/imageViewer";
 import Button from "@/components/Button";
-import  * as ImagePicker from 'expo-image-picker';
+import * as ImagePicker from 'expo-image-picker';
 
 
 export default function Index() {
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      console.log(result);
+    } else {
+      alert('you did not select any image!..');
+    }
+
+  };
   return (
     <View
       style={styles.container}
@@ -14,7 +27,7 @@ export default function Index() {
         <ImageViewer />
       </View>
       <View>
-        <Button theme='primary' lable="Choose a photo" />
+        <Button lable="Choose a photo" theme='primary' onPress={pickImageAsync}/>
         <Button lable="Press me" />
 
       </View>
