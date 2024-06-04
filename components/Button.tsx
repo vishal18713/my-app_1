@@ -4,7 +4,7 @@ export default function Button({ lable,theme }) {
 
     if (theme === 'primary') {
         return(
-            <View style={[styles.buttonContainer,{borderWidth:4,borderColor:'#ffd33d',borderRadius:18}]}>
+            <View style={[styles.buttonContainer,{borderWidth:4,borderColor:'#ffd33d',borderRadius:5}]}>
             <Pressable style={[styles.button,{backgroundColor:'#fff'}]} onPress={() => alert('you touched ' + `${lable}`)}>
                 <FontAwesome name="picture-o" size={18} color='#25292e' style={styles.buttonIcon}/>
                 <Text style = {[styles.buttonLabel,{color:'#25292e'}]}>{lable}</Text>

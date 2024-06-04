@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import ImageViewer from "@/components/imageViewer";
 import Button from "@/components/Button";
+import  * as ImagePicker from 'expo-image-picker';
 
 
 export default function Index() {
