@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View,Image } from "react-native";
-const palceHolderImage = require('../assets/images/adaptive-icon.png');
 
-export default function ImageViewer() {
+
+export default function ImageViewer({palceholderImageSource,selectedImage}) {
+    const imageSource = selectedImage ? {uri:selectedImage} :palceholderImageSource;
     return (
-        <Image source = {palceHolderImage} style = {styles.image}/>
+        <Image source={imageSource} style = {styles.image}/>
     );
 };
 
